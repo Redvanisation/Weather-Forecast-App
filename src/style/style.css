@@ -1,0 +1,49 @@
+/* 
+
+Black: #030409
+
+White: #F4F7F8
+
+Lightblue: #B4C8DE
+
+Lightblue2: #ADB6C7
+
+Lightblue3: #8A99AE
+
+Navy: #464D60
+
+Navy2: #6F7689
+
+
+
+*/
+
+*,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #F4F7F8;
+    font-family: 'Lato', sans-serif;
+}
+
+.video {
+    position: relative;
+    z-index: -10;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right bottom, rgba(3, 4, 9,.8) 55%, rgba(70, 77, 96,.8));
+    /* background: linear-gradient(to bottom, black, red); */
+    z-index: 100;
+}
