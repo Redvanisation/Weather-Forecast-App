@@ -4,6 +4,30 @@ const getData = (url, methods) => {
     .then((res) => res.json());
 };
 
+const setUnit = (val) => {
+  switch (val) {
+    case 'imperial':
+      return 'F';
+    case 'metric':
+      return 'C';
+  }
+};
+
+const getFullDate = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const day = date.getDate();
+
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const month = months[date.getMonth()];
+
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const wkDay = days[date.getDay()];
+  const currentDate = `${wkDay}, ${day} ${month}`;
+
+  return currentDate;
+};
+
 const setVidId = (val) => {
   // switch (val) {
   //   case 'Thunderstorm':
@@ -47,4 +71,6 @@ const setVidId = (val) => {
 export {
   getData,
   setVidId,
+  setUnit,
+  getFullDate,
 };

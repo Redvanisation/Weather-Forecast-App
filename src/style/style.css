@@ -132,8 +132,9 @@ body {
 }
 
 .icon {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     font-weight: 900;
+    /* width: 5rem; */
 }
 
 .description {
