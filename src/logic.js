@@ -21,47 +21,47 @@ import { setVidId } from './helpers';
 //   }
 // };
 
-const city = 'London';
+const weatherDetails = () => {
+  const theWeather = {
+    temperature: null,
+    video_id: null,
+  };
+  return theWeather;
+};
 
-
+const city = 'setif';
 
 
 let apiWeather = '';
 
-// console.log(vidId);
-
-const vidId = '';
 
 const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=19c530a7aaf855f300ff7a9af5be9ac1&units=metric`;
 
 
-const call = () => {
+const call = (vid) => {
+  const weather = weatherDetails();
+  let videoUrl = 'https://api.pexels.com/videos/videos/';
+  
   fetch(weatherUrl, { mode: 'cors' })
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data);
+      console.log(data)
       apiWeather = data.weather[0].main;
-      setVidId(apiWeather);
-    });
-};
+      weather.video_id = setVidId(apiWeather);
+      videoUrl += setVidId(apiWeather);
+    // return videoUrl;
+    // return vidId = localStorage.getItem(apiWeather);
+      fetch(videoUrl, { mode: 'cors', headers: { Authorization: '563492ad6f9170000100000197f63efc9690455a8a7aac6e15f8cc0f' } })
+        .then((res) => res.json())
+        .then((data) => {
+          const src = data.video_files[1].link;
+          vid.setAttribute('src', src);
+          // console.log(data);
+        });
+  });
 
-// console.log(apiWeather, 'await');
-
-
-
-const videoUrl = `https://api.pexels.com/videos/videos/${vidId}`;
-
-const pexels = (vid) => {
-  fetch(videoUrl, { mode: 'cors', headers: { Authorization: '563492ad6f9170000100000197f63efc9690455a8a7aac6e15f8cc0f' } })
-    .then((res) => res.json())
-    .then((data) => {
-      const src = data.video_files[1].link;
-      vid.setAttribute('src', src);
-    });
 };
 
 
-// setVid(apiWeather);
 
-
-export { call, pexels };
+export { call };

@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import { call } from './logic';
 import './style/style.css';
 
@@ -5,8 +6,8 @@ const video = document.querySelector('#video');
 
 
 
-call();
+call(video);
+
 
 // pexels(video);
 
-// console.log(pexels);
