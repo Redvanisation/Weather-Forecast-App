@@ -1,4 +1,4 @@
-import { call, pexels } from './logic';
+import { call } from './logic';
 import './style/style.css';
 
 const video = document.querySelector('#video');
@@ -7,6 +7,6 @@ const video = document.querySelector('#video');
 
 call();
 
-pexels(video);
+// pexels(video);
 
 // console.log(pexels);

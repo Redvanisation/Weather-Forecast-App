@@ -33,17 +33,142 @@ body {
 }
 
 .video {
-    position: relative;
     z-index: -10;
+    /* position: relative;
+    width: 100vw; */
+    /* height: 100vh; */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
+    text-align: center;
+    color: #F4F7F8;
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right bottom, rgba(3, 4, 9,.8) 55%, rgba(70, 77, 96,.8));
-    /* background: linear-gradient(to bottom, black, red); */
-    z-index: 100;
+}
+
+.search {
+    display: block;
+    margin: 2rem auto;
+    padding: .5rem 1rem;
+    font-size: 18px;
+    font-weight: 700;
+    color: #F4F7F8;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    text-align: center;
+    width: 10%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid white;
+    outline: none;
+    transition: all .5s;
+}
+
+.search:focus {
+    width: 20%;
+}
+
+.city {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin: 2rem auto;
+}
+
+.country {
+    font-weight: 400;
+    color: #ADB6C7;
+}
+
+.date {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.today {
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ADB6C7;
+}
+
+.temp-details {
+    margin: 1rem auto;
+}
+
+.tempurature {
+    font-size: 10rem;
+    font-weight: 900;
+    display: inline-block;
+    position: relative;
+    padding: 0 3rem;
+}
+
+.unit {
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ADB6C7;
+
+}
+
+.icon-container {
+    margin: 1rem auto;
+}
+
+.icon {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #ADB6C7;
+}
+
+.details-container {
+    width: 30%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail-div {
+
+}
+
+.detail-title {
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ADB6C7;
+}
+
+.detail-value {
+    display: inline-block;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    /* color: #ADB6C7; */
+
 }

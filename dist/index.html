@@ -9,10 +9,35 @@
 </head>
 <body>
 
-    <!-- <h1>Hello world!</h1> -->
     
-    <div class="overlay"></div>
-    <video id="video" class="video" autoplay loop></video>
+    <video id="video" class="video" autoplay loop muted></video>
+    <div class="overlay">
+        <input type="text" class="search" id="search" placeholder="Search city...">
+        <h2 class="city">New York, <span class="country">US</span></h2>
+        <h2 class="date">Today<span class="today">Wed, 3 Dec</span></h2>
+
+        <div class="temp-details">
+            <p class="tempurature">-1<span class="unit">C</span></p>
+
+            <div class="icon-container">
+                <div class="icon">X</div>
+                <h4 class="description">Cloudy</h4>
+            </div>
+
+            <div class="details-container">
+                <div class="detail-div">
+                    <h3 class="detail-title">Detail 1</h3>
+                    <span class="detail-value">87</span>
+                </div>
+                
+                <div class="detail-div">
+                    <h3 class="detail-title">Detail 2</h3>
+                    <span class="detail-value">65</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
     <script src="./main.js"></script>
 </body>
