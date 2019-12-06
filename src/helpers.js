@@ -2,7 +2,6 @@
 const getData = (url, methods) => {
   fetch(`${url}`, methods)
     .then((res) => res.json());
-    // .then((data) => console.log(data));
 };
 
 const setVidId = (val) => {
@@ -31,24 +30,16 @@ const setVidId = (val) => {
   switch (val) {
     case 'Thunderstorm':
       return '854541';
-      // break;
     case 'Drizzle':
       return '856281';
-      // break;
     case 'Rain':
       return '856281';
-      // break;
     case 'Snow':
       return '857032';
-      // break;
     case 'Clear':
       return '857041';
-      // break;
     case 'Clouds':
-      return '855507';
-      // break;
-    // default:
-    //   vr = '855507';
+      return '855679';
   }
 };
 
