@@ -42,7 +42,7 @@ const getWeather = (vid, wCity = 'new york') => {
 
 
   fetch(weatherUrl, { mode: 'cors' })
-    .then((res) => res.json())
+    .then(res => res.json())
     .then((data) => {
       apiWeather = data.weather[0].main;
       weather.video_id = setVidId(apiWeather);
@@ -59,7 +59,7 @@ const getWeather = (vid, wCity = 'new york') => {
     })
     .then(() => {
       fetch(videoUrl, { mode: 'cors', headers: { Authorization: videoKey } })
-        .then((res) => res.json())
+        .then(res => res.json())
         .then((data) => {
           const src = data.video_files[1].link;
           vid.setAttribute('src', src);
