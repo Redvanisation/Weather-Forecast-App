@@ -1,6 +1,9 @@
+/* eslint-disable no-alert */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable radix */
-import { setVidId, setUnit, getFullDate, kiloToMile } from './helpers';
+import {
+  setVidId, setUnit, getFullDate, kiloToMile,
+} from './helpers';
 
 
 const weatherKey = '19c530a7aaf855f300ff7a9af5be9ac1';
