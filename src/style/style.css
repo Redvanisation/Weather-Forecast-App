@@ -34,9 +34,6 @@ body {
 
 .video {
     z-index: -10;
-    /* position: relative;
-    width: 100vw; */
-    /* height: 100vh; */
     position: fixed;
     right: 0;
     bottom: 0;
@@ -48,11 +45,30 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    background: linear-gradient(to right bottom, rgba(3, 4, 9,.8) 55%, rgba(70, 77, 96,.8));
     text-align: center;
     color: #F4F7F8;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right bottom, rgba(3, 4, 9,.8) 55%, rgba(70, 77, 96,.8));
+}
+
+.search-div {
+    position: relative;
+    /* border: 1px solid green; */
+    width: 400px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    /* border: 1px solid red; */
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    right: 90px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px 5px;
+    transition: all .5s;
 }
 
 .search {
@@ -65,7 +81,7 @@ body {
     text-transform: capitalize;
     letter-spacing: 3px;
     text-align: center;
-    width: 10%;
+    width: 60%;
     background-color: transparent;
     border: none;
     border-bottom: 3px solid white;
@@ -74,7 +90,18 @@ body {
 }
 
 .search:focus {
-    width: 20%;
+    width: 90%;
+}
+
+.search:focus + .search-icon {
+    right: 30px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 1rem auto;
+    /* border: 1px solid white; */
 }
 
 .city {
@@ -82,7 +109,7 @@ body {
     font-weight: 900;
     font-size: 2.5rem;
     letter-spacing: 3px;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .country {
@@ -91,7 +118,7 @@ body {
 }
 
 .date {
-    font-size: 4rem;
+    font-size: 3.5rem;
     letter-spacing: 5px;
     font-weight: 900;
     line-height: 1.5;
@@ -100,35 +127,35 @@ body {
 .today {
     display: block;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #ADB6C7;
 }
 
 .temp-details {
-    margin: 1rem auto;
+    /* margin: .5rem auto; */
 }
 
 .tempurature {
-    font-size: 10rem;
+    font-size: 8rem;
     font-weight: 900;
     display: inline-block;
     position: relative;
     padding: 0 3rem;
+    margin: 0;
 }
 
 .unit {
     display: inline-block;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 55px;
+    right: 20px;
     font-size: 2rem;
     font-weight: 400;
     color: #ADB6C7;
-
 }
 
 .icon-container {
-    margin: 1rem auto;
+    /* margin: 1rem auto; */
 }
 
 .icon {
@@ -144,15 +171,17 @@ body {
 
 .details-container {
     width: 30%;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
+    /* border: 1px solid beige; */
     display: flex;
     justify-content: space-evenly;
 }
 
-.detail-div {
+.details-div {
+    flex-grow: 1;
 
 }
 
@@ -171,5 +200,10 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     /* color: #ADB6C7; */
-
 }
+
+.tempurature {
+    cursor: pointer;
+    transition: all .2s;
+}
+

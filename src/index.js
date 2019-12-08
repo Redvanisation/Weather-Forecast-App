@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import { getWeather } from './dom';
 import './style/style.css';
 

@@ -28,6 +28,26 @@ const getFullDate = () => {
   return currentDate;
 };
 
+const unitSwitcher = (unit, val1, val2) => {
+  if (unit !== val1) {
+    unit = val1;
+  } else {
+    unit = val2;
+  }
+  return unit;
+};
+
+const findMatches = (wordToMatch, cities) => {
+  return cities.filter((place) => {
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.match(regex);
+  });
+};
+
+const timeout = async (ms) => {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 const setVidId = (val) => {
   // switch (val) {
   //   case 'Thunderstorm':
@@ -67,10 +87,18 @@ const setVidId = (val) => {
   }
 };
 
+const changeCity = (vr, value, method, elem) => {
+  vr = value;
+  return method(elem);
+};
 
 export {
   getData,
   setVidId,
   setUnit,
   getFullDate,
+  unitSwitcher,
+  findMatches,
+  changeCity,
+  timeout,
 };
