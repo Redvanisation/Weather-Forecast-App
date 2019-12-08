@@ -1,11 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable radix */
-import { setVidId, setUnit, getFullDate, unitSwitcher, findMatches, changeCity } from './helpers';
-// const call = async () => {
-//   const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=new%20york&APPID=19c530a7aaf855f300ff7a9af5be9ac1');
-//   const data = await response.json();
-//   // return data;
-// };
+import { setVidId, setUnit, getFullDate, kiloToMile } from './helpers';
 
 
 const weatherKey = '19c530a7aaf855f300ff7a9af5be9ac1';
@@ -32,7 +27,7 @@ const weatherDetails = (unt) => {
 const video = document.querySelector('#video');
 const tempurature = document.querySelector('#tempurature');
 
-let chosenCity = '';
+let chosenCity = 'new york';
 let units = 'metric';
 
 
@@ -56,8 +51,8 @@ const getWeather = (vid, wCity = 'new york') => {
       tempurature.innerHTML = `${parseInt(data.main.temp)}<span class="unit" id="unit">${weather.unit}</span>`;
       icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       description.textContent = data.weather[0].description;
-      detailValue1.textContent = `${data.main.humidity}%`;
-      detailValue2.textContent = data.main.pressure;
+      detailValue1.innerHTML = `${data.main.humidity} <span class="details-unit">%</span>`;
+      detailValue2.innerHTML = `${parseInt(data.wind.speed)} <span class="details-unit">${kiloToMile(weather.unit, 'C', 'kmH', 'mpH')}</span>`;
     })
     .then(() => {
       fetch(videoUrl, { mode: 'cors', headers: { Authorization: videoKey } })
@@ -68,7 +63,7 @@ const getWeather = (vid, wCity = 'new york') => {
         })
         .catch(() => alert('Error loading the background video! Wait for a while then retry please!'));
     })
-    .catch(() => alert('Error loading the page! please enter a city and reload!'));
+    .catch(() => alert('Please enter a valid city and reload!'));
 };
 
 
@@ -94,4 +89,4 @@ searchIcon.addEventListener('click', () => {
 });
 
 
-export { getWeather };
+export default getWeather;
