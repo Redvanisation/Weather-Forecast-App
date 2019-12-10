@@ -44,7 +44,7 @@ const getFullDate = () => {
 
 const kiloToMile = (mainUnt, secondUnt, unt1, unt2) => mainUnt === secondUnt ? unt1 : unt2;
 
-const fetchVid = async (url, vidKey, elem) => {
+async function fetchVid(url, vidKey, elem) {
   try {
     const getVid = await fetch(url, { mode: 'cors', headers: { Authorization: vidKey } });
     const response = await getVid.json();
@@ -55,7 +55,7 @@ const fetchVid = async (url, vidKey, elem) => {
   } catch (err) {
     alert('Error loading the background video! Wait for a while then retry please!');
   }
-};
+}
 
 
 export {
