@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 /* eslint-disable no-alert */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable radix */
@@ -58,7 +59,7 @@ const getWeather = (vid, wCity = 'new york') => {
       detailValue2.innerHTML = `${parseInt(data.wind.speed)} <span class="details-unit">${kiloToMile(weather.unit, 'C', 'kmH', 'mpH')}</span>`;
     })
     .then(() => {
-      const fetchVid = async () => {
+      async function fetchVid() {
         try {
           const getVid = await fetch(videoUrl, { mode: 'cors', headers: { Authorization: videoKey } });
           const response = await getVid.json();
@@ -69,7 +70,7 @@ const getWeather = (vid, wCity = 'new york') => {
         } catch (err) {
           alert('Error loading the background video! Wait for a while then retry please!');
         }
-      };
+      }
       fetchVid();
     })
     .catch(() => alert('Please enter a valid city and reload!'));
