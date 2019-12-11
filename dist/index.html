@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Forecast App</title>
+    <script src="https://kit.fontawesome.com/04579564e7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <main class=" overlay">
+        <video id="video" class="video" autoplay loop muted></video>
+        <header class="search-div">
+            <input type="text" class="search" id="search" placeholder="Search city...">
+            <i class="fa fa-search search-icon" id="search-icon"></i>
+        </header>
+        
+        <div class="content">
+            <h2 class="city" id="city"></h2>
+            <h2 class="date">Today<span class="today" id="today">Wed, 3 Dec</span></h2>
+
+            <div class="temp-details">
+                <p class="tempurature" id="tempurature"></p>
+
+                <div class="icon-container">
+                    <img class="icon" id="icon">
+                    <h4 class="description" id="description"></h4>
+                </div>
+
+                <div class="details-container">
+                    <div class="detail-div">
+                        <h3 class="detail-title" id="detail-title-1">humidity</h3>
+                        <span class="detail-value" id="detail-value-1"></span>
+                    </div>
+                    
+                    <div class="detail-div">
+                        <h3 class="detail-title" id="detail-title-2">wind</h3>
+                        <span class="detail-value" id="detail-value-2"></span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
