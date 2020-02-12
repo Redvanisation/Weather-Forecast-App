@@ -39,7 +39,7 @@ const getWeather = (vid, wCity = 'new york') => {
   const weather = weatherDetails(units);
   let apiWeather = '';
   let videoUrl = 'https://api.pexels.com/videos/videos/';
-  const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${wCity}&APPID=${weatherKey}&units=${units}`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${wCity}&APPID=${weatherKey}&units=${units}`;
 
 
   fetch(weatherUrl, { mode: 'cors' })
@@ -53,7 +53,7 @@ const getWeather = (vid, wCity = 'new york') => {
       city.innerHTML = `${data.name}, <span class="country" id="country">${data.sys.country}</span>`;
       today.textContent = getFullDate();
       tempurature.innerHTML = `${parseInt(data.main.temp)}<span class="unit" id="unit">${weather.unit}</span>`;
-      icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       description.textContent = data.weather[0].description;
       detailValue1.innerHTML = `${data.main.humidity} <span class="details-unit">%</span>`;
       detailValue2.innerHTML = `${parseInt(data.wind.speed)} <span class="details-unit">${kiloToMile(weather.unit, 'C', 'kmH', 'mpH')}</span>`;
